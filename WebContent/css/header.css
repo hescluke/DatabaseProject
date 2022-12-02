@@ -1,0 +1,13 @@
+
+
+#logo {
+	float: left;
+	height: 50px;
+	width: 50px;
+	background-image: url("../img/tou.png");
+}
+
+#daohang {
+	clear: both;
+	height: 52px;
+}

@@ -1,0 +1,113 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			 ;
+%>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head><script type="text/javascript" src="<%=basePath%>/js/texiao.js"></script>
+<body style="background-color: rgb(100,95,108)">
+	<div style="text-align: center">
+		<img src="<%=basePath%>/img/guanliyuan1.png" style="margin-left: 20px" />
+	</div>
+	<div style="margin-top: 30px">
+
+<%--		<hr>--%>
+<%--		<a href="<%=basePath%>/admin/managerINFO.jsp"--%>
+<%--		   style="text-decoration: none;" target="main"><p--%>
+<%--				style="font-size: 20px; color: white; text-align: center">--%>
+<%--			<img src="<%=basePath%>/img/icon-1.png" style="width: 20px" />--%>
+<%--			管理员信息修改--%>
+<%--		</p></a>--%>
+<%--		<hr>--%>
+
+
+
+		<a href="<%=basePath%>/admin/managerInformation.jsp"
+			style="text-decoration: none;" target="main"><p
+				style="font-size: 20px; color: white; text-align: center">
+				<img src="<%=basePath%>/img/icon-1.png" style="width: 20px" />
+				管理员信息修改
+			</p></a>
+		<hr>
+		<a href="<%=basePath%>/admin/managerPassword.jsp"
+			style="text-decoration: none;" target="main"><p
+				style="font-size: 20px; color: white; text-align: center">
+				<img src="<%=basePath%>/img/icon-2.png" style="width: 20px" />
+				管理员密码修改
+			</p></a>
+		<hr>
+
+
+
+		<a href="<%=basePath%>/admin/ManagerServlet?op=category"
+			style="text-decoration: none;" target="main"><p
+				style="font-size: 20px; color: white; text-align: center">
+				<img src="<%=basePath%>/img/icon-9.png" style="width: 20px" />
+				音乐单曲维护
+			</p></a>
+		<hr>
+		<a href="<%=basePath%>/admin/ManagerServlet?op=categoryList"
+			style="text-decoration: none;" target="main"><p
+				style="font-size: 20px; color: white; text-align: center">
+				<img src="<%=basePath%>/img/icon-8.png" style="width: 20px" />
+				音乐分类维护
+			</p></a>
+		<hr>
+		<a href="<%=basePath%>/admin/addCategory.jsp"
+			style="text-decoration: none;" target="main"><p
+				style="font-size: 20px; color: white; text-align: center">
+				<img src="<%=basePath%>/img/icon-3.png" style="width: 20px" />
+				添加音乐分类
+			</p></a>
+		<hr>
+		<a
+			href="${pageContext.request.contextPath}/admin/ManagerServlet?op=addSongUI"
+			style="text-decoration: none;" target="main"><p
+				style="font-size: 20px; color: white; text-align: center">
+				<img src="<%=basePath%>/img/icon-4.png" style="width: 20px" />
+				添加音乐单曲
+			</p></a>
+		<hr>
+		<a
+			href="${pageContext.request.contextPath}/order/OrderServlet?op=findOrders"
+			style="text-decoration: none;" target="main"><p
+				style="font-size: 20px; color: white; text-align: center">
+				<img src="<%=basePath%>/img/icon-5.png" style="width: 20px" />
+				销售订单管理
+			</p></a>
+		<hr>
+		<a
+			href="${pageContext.request.contextPath}/admin/ManagerServlet?op=findUsers"
+			style="text-decoration: none;" target="main"><p
+				style="font-size: 20px; color: white; text-align: center">
+				<img src="<%=basePath%>/img/icon-6.png" style="width: 20px" />
+				用户信息管理
+			</p></a>
+		<hr>
+		<a href="<%=basePath%>/admin/addAdmin.jsp"
+			style="text-decoration: none;" target="main"><p
+				style="font-size: 20px; color: white; text-align: center">
+				<img src="<%=basePath%>/img/icon-15.png" style="width: 20px" />
+				添加管理员
+			</p></a>
+		<hr>
+		<a
+			href="${pageContext.request.contextPath}/admin/ManagerServlet?op=sales"
+			style="text-decoration: none;" target="main"><p
+				style="font-size: 20px; color: white; text-align: center">
+				<img src="<%=basePath%>/img/icon-16.png" style="width: 20px" />
+				歌曲销售情况
+			</p></a>
+		<hr>
+<%--	<div>--%>
+<%--	<a class="btn btn-primary" href="<%=basePath%>/client/ClientServlet?op=category"--%>
+<%--	   role="button" target="main" style="text-align: center">退出</a></div>--%>
+<%--	</div>--%>
+</body>
+</html>

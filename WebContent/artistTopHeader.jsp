@@ -1,0 +1,148 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <%
+        String path = request.getContextPath();
+        String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+                ;
+    %>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>COOL MUSIC</title>
+    <link rel="stylesheet" href="<%=basePath%>/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="<%=basePath%>/css/header.css"/>
+</head>
+<body>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/texiao.js"></script>
+
+<!-- 导航条 -->
+<div id="daohang">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+                <c:if test="${!empty user}">
+                    <a href="<%=basePath%>/admin/top.jsp" target="_top"><img style="background-size:contain;height: 50px;width: 50px"
+                                                                             src="<%=basePath%>/img/tou.png" />
+                        <font style="top:20px; color: #080808; font-size: 30px;font-family: 华文行楷">酷音乐库</font>
+                    </a>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome dear <span
+                        style="color: red; font-weight: bold">${user.name}</span>&nbsp;!&nbsp;&nbsp;&nbsp;Please enjoy yourself in COOL MUSIC!
+
+                </c:if>
+                <c:if test="${!empty artist}">
+                    <a href="<%=basePath%>/admin/top.jsp" target="_top"><img style="background-size:contain;height: 50px;width: 50px"
+                                                                             src="<%=basePath%>/img/tou.png" />
+                        <font style="top:20px; color: #080808; font-size: 30px;font-family: 华文行楷">酷音乐库</font>
+                    </a>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome dear <span
+                        style="color: red; font-weight: bold">${artist.artist_name}</span>&nbsp;!&nbsp;&nbsp;&nbsp;Please enjoy yourself in COOL MUSIC!
+
+                </c:if>
+                <c:if test="${empty user && empty artist}">
+                    <a href="<%=basePath%>/index.jsp" target="_top"><img style="background-size:contain;height: 50px;width: 50px"
+                                                                         src="<%=basePath%>/img/tou.png" />
+                        <font style="top:20px; color: #080808; font-size: 30px;font-family: 华文行楷">酷音乐库</font>
+                    </a>Please login first!
+                </c:if>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse"
+                 id="bs-example-navbar-collapse-1">
+                <div style="float: right; margin-right: 7px; margin-top: 10px">
+                    <a class="btn btn-default btn-sm" target="_parent"
+                       href="${pageContext.request.contextPath}/artist/ArtistServlet?op=layout"
+                       role="button">退出登录</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div>
+    <!-- 轮播图 -->
+    <div class="container">
+        <div id="carousel-example-generic" class="carousel slide"
+             data-ride="carousel">
+            <!-- 轮播图的中的小点 -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+            </ol>
+            <!-- 轮播图的轮播图片 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="<%=basePath%>/img/background/tl.jpg">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="<%=basePath%>/img/background/hh.jpg"style = "width:100%;">
+                    <div class="carousel-caption">
+                        <!-- 轮播图上的文字 -->
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="<%=basePath%>/img/background/justin.jpg" style="width: 100%">
+                    <div class="carousel-caption">
+                        <!-- 轮播图上的文字 -->
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="<%=basePath%>/img/background/lp.jpg" style = "width:100%">
+                    <div class="carousel-caption">
+                        <!-- 轮播图上的文字 -->
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="<%=basePath%>/img/background/m5.jpg" style = "width:100%">
+                    <div class="carousel-caption">
+                        <!-- 轮播图上的文字 -->
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="<%=basePath%>/img/background/avril.jpg" style = "width:100%">
+                    <div class="carousel-caption">
+                        <!-- 轮播图上的文字 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 上一张 下一张按钮 -->
+            <a class="left carousel-control" href="#carousel-example-generic"
+               role="button" data-slide="prev"> <span
+                    class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a> <a class="right carousel-control" href="#carousel-example-generic"
+                    role="button" data-slide="next"> <span
+                class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
